@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="asset/css/framework.css">
+    <link rel="stylesheet" href="asset/css/style.css">
+    <link rel="stylesheet" href="asset/css/responssive.css">
+    <link rel="stylesheet" href="asset/css/annimation.css">
+    <link rel="icon" href="asset/img/logopendu2.png" type="image/png">
+    <title>Jeux du pendu</title>
+</head>
+<body class="relative">
+    <section id="user_setting" class="pad absolute user_setting_open relative hidden ">
+      
+        <img id="close_setting" class="pointer absolute" src="asset/img/icons8-effacer-48.png">
+        <div class="w1 flex column items_center">
+            <h2 class="center color3 padh">Choisis une catégorie</h2>
+            <select name="" id="select" class="center" >
+                <option value="tous">Tous</option>
+                <option value="enfant">Enfant</option>
+                <option value="musique">Musique</option>
+                <option value="Films_Series">Films/Series</option>
+                <option value="vancances">Vancances</option>
+                <option value="pays">Pays</option>
+                <option value="disney">Disney</option>
+            </select> 
+            <button id="submit" type="submit" class="color1 radius_15 pointer bgcolor3" value="JOUER" onclick="selectOption()">JOUER</button>
+        </div>
+        <section id="info">
+            <h3 class="center color3 ">Bienvenue au jeu du Pendu !</h3>
+            <p class="center color3 italic line_space">
+                Les mots à deviner peuvent inclure les accents aigus(é)et graves(è), mais pas d'autres types d'accents. Les mots ne contiennent ni espaces ni tirets (-). Les lettres déjà tentées sont désactivées. Êtes-vous prêt à relever le défi ? <span class="bloc cenetr"> Bonne chance !</span> 
+            </p>
+        </section>
+    </section>
+    <header class="flex between items_center">
+        <img id="logo" src="asset/img/logopendu2.png" alt="pendu logo">
+        <h1 class="color1">LE PENDU </h1>
+        <img id="setting" src="asset/img/parametre.png" class="pointer rotate" alt="paramettre">
+    </header>
+ <main >
+    <h2 id="erreur"><span id="nb_errors" class="color1 "></span></h2> 
+    <!-- img SVG pendu -->
+    <?xml version="1.0" encoding="UTF-8"?>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 459.26 598.09" f >
+
+        <g id="base" class="hidden transition" >
+            <rect id="base-2" data-name="base" class="cls-3" y="587.23" width="211" height="10.86"/>
+        </g>
+
+        <g id="poteau"class="hidden transition">
+            <rect id="poteau-2" data-name="poteau" class="cls-3" x="-186.15" y="288.65" width="586.16" height="10.86" transform="translate(-187.15 401.01) rotate(-90)"/>
+        </g>
+
+        <g id="transversale"class="hidden transition">
+            <rect id="transersale" class="cls-3" x="101.5" width="357.76" height="10.86"/>
+        </g>
+
+        <g id="angle"class="hidden transition">
+            <rect id="transersale-2" data-name="transersale" class="cls-3" x="72.05" y="78.78" width="227.31" height="10.86" transform="translate(-5.15 155.98) rotate(-45)"/>
+        </g>
+
+        <g id="corde"class="hidden transition">
+            <rect id="transersale-3" data-name="transersale" class="cls-3" x="296.96" y="69.42" width="143.11" height="10.86" transform="translate(293.67 443.37) rotate(-90)"/>
+        </g>
+        
+        <g id="tete"class="hidden transition">
+            <g>
+            <circle id="tete-2" data-name="tete" class="cls-1" cx="368.52" cy="188.63" r="42.23"/>
+            <g id="yeux">
+                <circle class="cls-2" cx="351.63" cy="171.74" r="8.45"/>
+                <circle class="cls-2" cx="386.39" cy="171.74" r="8.45"/>
+            </g>
+            <line class="cls-2" x1="369.37" y1="188.63" x2="362.78" y2="199.52"/>
+            <line class="cls-2" x1="373.95" y1="197.74" x2="363.37" y2="199.07"/>
+            <path class="cls-2" d="m356.43,215.46s12.09-16.85,24.17,0"/>
+            </g>
+        </g>
+
+        <g id="corp"class="hidden transition">
+            <rect id="corp" class="cls-3" x="271.32" y="325.76" width="196.06" height="6.24" transform="translate(40.46 698.23) rotate(-90)"/>
+        </g>
+
+        <g id="bras">
+            <rect id="bras_droit"class="hidden transition" data-name="bras droit" class="cls-3" x="358.47" y="279.49" width="74.09" height="6.24" transform="translate(491.14 759.23) rotate(-136.89)"/>
+            <rect id="bras_gauche"class="hidden transition" data-name="bras gauche" class="cls-3" x="306.14" y="282.42" width="74.09" height="6.24" transform="translate(-99.8 340.96) rotate(-46.89)"/>
+        </g>
+
+        <g id="jambes">
+            <rect id="jambe_droit"class="hidden transition" data-name="jambe droit" class="cls-3" x="358.68" y="446.15" width="74.09" height="6.24" transform="translate(377.61 1047.69) rotate(-136.89)"/>
+            <rect id="jambe_gauche"class="hidden transition" data-name="jambe gauche" class="cls-3" x="306.34" y="449.07" width="74.09" height="6.24" transform="translate(-221.41 393.87) rotate(-46.89)"/>
+        </g>
+    </svg>
+    <div class="container">
+        <p id="result"></p>
+        <p id="correction" class="display"></p>
+    </div>
+    <div id="button">   
+        <button id="generate" class="color3 radius_15 pointer">Nouvelle partie</button>
+    </div>
+
+    <table class="responssive">
+        <tr class="center flex around">
+            <td class="key_mobile" value="a" href="a"   >a</td>
+            <td class="key_mobile" value="z"   >z</td>
+            <td class="key_mobile" value="e"   >e</td>
+            <td class="key_mobile" value="r"   >r</td>
+            <td class="key_mobile" value="t"   >t</td>
+            <td class="key_mobile" value="y"   >y</td>
+            <td class="key_mobile" value="u"   >u</td>
+            <td class="key_mobile" value="i"   >i</td>
+            <td class="key_mobile" value="o"   >o</td>
+            <td class="key_mobile" value="p"   >p</td>
+        </tr>
+        <tr class="center flex around">
+            <td class="key_mobile" value="q"   >q</td>
+            <td class="key_mobile" value="s"   >s</td>
+            <td class="key_mobile" value="d"   >d</td>
+            <td class="key_mobile" value="f"   >f</td>
+            <td class="key_mobile" value="g"   >g</td>
+            <td class="key_mobile" value="h"   >h</td>
+            <td class="key_mobile" value="j"   >j</td>
+            <td class="key_mobile" value="k"   >k</td>
+            <td class="key_mobile" value="l"   >l</td>
+            <td class="key_mobile" value="m"   >m</td>
+        </tr>
+    
+        <tr class="center flex around">
+            <td class="key_mobile" value="é"   >é</td>
+            <td class="key_mobile" value="w"   >w</td>
+            <td class="key_mobile" value="x"   >x</td>
+            <td class="key_mobile" value="c"   >c</td>
+            <td class="key_mobile" value="v"   >v</td>
+            <td class="key_mobile" value="b"   >b</td>
+            <td class="key_mobile" value="n"   >n</td>
+            <td class="key_mobile" value="è"   >è</td>
+        </tr>
+    </table>
+</main>
+<footer class="center wrap pad color3">
+    <p>©<a class="color3" href="https://www.avwebcreation.fr" target="_blank">AvWebCreation </a>| 2023 | Tous droit reservé | <a class="color3" href="mailto:avwebcreation@gmail.com" target="_blank">avwebcreation@gmail.com</a></p>
+</footer>
+<script src="asset/js/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+@media screen and (max-width:979px){
+
+.responssive{
+    display: inline-table;
+}
+
+}
+
+/* MOBILE */
+    @media screen and (max-width:767px){
+        h1{
+            font-size: 1.5rem;
+        }
+        #logo{
+            width: 80px;
+        }
+        #setting{
+            width: 40px;
+        }
+        footer p{
+            font-size: 1.2rem;
+        }
+        #result{
+            width: 100%;
+        }
+        #correction{
+            letter-spacing: 5px;
+        }
+        .user_setting_open{
+            background-size: 500px;
+            
+        } 
+        .user_setting_open,#info p,#user_setting #submit,#user_setting select{
+            font-size: 1rem;
+        } 
+        #close_setting{
+            width: 30px ;
+            top: 25px;
+            right: 25px;
+        }
+        #user_setting{
+            padding: 2%;
+        }
+        h2{
+            padding: 50px 0 20px !important;
+        }
+        table{
+            padding: 0;
+        }
+        td {
+            width: 25px;
+            height: 25px;
+        }
+    } 
+/* FIN MOBILE */    
+
+@media screen and (max-width: 500px){
+    h1{
+        font-size: 1.1rem;
+    }
+    #setting{
+        width: 25px;
+    }
+    #logo{
+        width: 40px;
+    }
+}

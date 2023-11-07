@@ -1,0 +1,250 @@
+body{
+    background-color: rgba(179, 179, 179, 0.835);
+    color: var(--color1);
+    background: url(../img/bg.webp) no-repeat center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+main{
+    padding: 0 5%;
+    min-height: 72vh;
+    max-height: max-content;
+    padding: 0 5% 290px;
+}
+body::before{
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left:0;
+    z-index: -1;
+    background: var(--color4);
+    opacity: .6;
+    position: absolute;
+}
+h1{
+    font-size: 2.5rem;
+    text-shadow: 3px -3px 3px var(--color3);
+}
+h1,h2{
+    letter-spacing: 5px;
+}
+footer{
+    background-image: linear-gradient(180deg,transparent,#ffffff80);
+  
+}
+header{
+ padding: 10px var(--pad-l) 0;
+ background-image: linear-gradient(180deg,#ffffffa3, transparent);
+}
+#logo{
+    width: 100px;
+}
+a,button,#user_setting{
+    transition: ease-in-out .2s;
+}
+a:hover{
+    color: var(--color1);
+}
+button{
+    padding: 15px;
+    background-color: var(--color1);
+    font-family: inherit;
+}  
+button:hover,#submit:hover{
+    box-shadow: 1px 1px 31px var(--color3);
+}
+p{
+    /* color: var(--color3); */
+    font-size: 1.3rem;
+}
+.letter{
+    width: 35px;
+    height: 35px;
+    /* background-color: wheat; */
+    border-bottom: solid 2px var(--color3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* color: green; */
+    font-weight: bold;
+    font-size: 2rem;
+    padding-bottom: 5px;
+    text-shadow: 2px 0px 0px var(--color3);
+}
+#result{
+    display: flex;
+    justify-content: space-around;
+    /* flex-wrap: wrap; */
+    width: 50%;
+    margin: auto;
+}
+#erreur{
+    text-align: center;
+    text-transform: uppercase;
+    color:ghostvar(--color3) ;
+    font-size:2rem;
+}
+#nb_errors{
+    font-size: 1.5rem;
+    padding: -24px 0;
+    display: block;
+    padding: 20px 0;
+    text-align: center;
+    text-shadow: 2px 0px 0px var(--color3);
+    letter-spacing: 10px;
+}
+#button{
+    text-align: center;
+}
+#button :active{
+    transform: scale(.5);
+}
+.container{
+    /* height: 20vh; */
+    padding: 30px 0;
+}
+/* image svg pendu */
+svg{
+    width: 250px;
+    display: block;
+    margin: auto;
+    fill: #f6f6f6;
+}
+.cls-1 {
+    stroke-width: 4px;
+}
+.cls-1, .cls-2 {
+    fill: none;
+    stroke: #f6f6f6;
+    stroke-miterlimit: 10;
+}
+.cls-2 {
+    stroke-width: 2px;
+}
+.cls-3 {
+    fill: #f6f6f6;
+    stroke-width: 0px;
+}
+.hidden{
+    opacity: 0;
+}
+.visible{
+    opacity: 1;
+}
+#correction{
+    letter-spacing: 25px;
+    font-size: 2rem;
+    color: var(--color1);
+    text-align: center;
+    font-weight: bold;
+    text-shadow: 2px 0px 0px var(--color3);
+}
+#user_setting select{
+    width: 200px;
+    font-family: inherit;
+    padding: 5px 0;
+    color: inherit;
+    margin-bottom: 30px;
+    font-size: 1.2rem;
+}
+#user_setting #submit,#generate{
+    padding: 10px;
+    width: 200px;
+    font-size: 1.3rem;
+    border: none;
+}
+.user_setting_open{
+    width: 90%;
+    border-radius: 15px;
+    top: 7%;
+    left: 5%;
+    z-index: 1;
+    opacity: 1;
+    box-shadow: 0px 0px 15px 5px var(--color3), inset 0px 0px 60px 10px var(--color4);
+    background: url(../img/imgpendu.svg) center no-repeat;
+    background-size: contain;
+    background-color: var(--color2);
+}
+.user_setting_close{
+   width: 90%;
+   height: 90%;
+   top: 7%;
+   left: 5%; 
+   z-index: -1;
+   opacity: 0;
+}
+#info{
+    letter-spacing: 3px;
+}
+#info p{
+    font-size: 1.1rem;
+}
+#info h3{
+    padding: 60px 0 30px;
+}
+/* croix fermeture section de parametre */
+#close_setting{
+    top: 50px;
+    right: 50px;
+}
+.rotate{
+    animation: rotate 10s infinite linear;
+}
+.display{
+    animation: display 1s linear; 
+}
+.display_opacity{
+    animation: display_opacity 1s linear;
+}
+.pendu{
+    color: rgba(139, 0, 0, 0.692);
+}
+.rotate-letter {
+    animation: rotate 1s linear;
+}
+/* personnalisation de la barre de scroll */
+body::-webkit-scrollbar,#result_realisation>div::-webkit-scrollbar  {
+    width: 10px; /* width of the entire scrollbar */   
+}
+body::-webkit-scrollbar-track,#result_realisation>div::-webkit-scrollbar   {
+    background: var(--color3); /* color of the tracking area */ 
+}
+body::-webkit-scrollbar-thumb,#result_realisation>div::-webkit-scrollbar-thumb{
+    border: 2px solid rgba(255, 255, 255, 0.16);
+    background: linear-gradient(318deg, #fff 0%, rgba(255, 255, 255, 0.40) 105.18%), rgba(255, 255, 255, 0.50);
+    background-blend-mode: soft-light, normal;
+    box-shadow: 20px 20px 24px -2px #A1A1A1 inset, -20px -20px 40px 0px #F6F6F6 inset;  
+    border-radius: 20px; 
+}
+body,#result_realisation>div{
+    scrollbar-width: thin; /* "auto" or "thin" */
+    scrollbar-color: var(--color1) var(--color3); /* scroll thumb and track */
+}
+/* fin personnalisation de la barre de scroll */
+td{
+    box-shadow: 2px -1px 0px 0px rgba(255, 255, 255, 0.411);
+    display: block;
+    /* border: solid 1px var(--color1); */
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    margin: 0 1.5%;
+    background-color: var(--color3);
+    box-shadow: inset;
+    border-radius: 5px;
+}
+td:active{
+    transform: scale(.8);
+}
+table{
+    min-width: 200px;
+    width: 100%;
+    padding: 5%;
+}
+tr{
+    margin: 15px 0;
+}
+.select_key{
+    opacity:.3;
+}

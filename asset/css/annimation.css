@@ -1,0 +1,30 @@
+/* rotation des div lettres */
+@keyframes rotate {
+    0%{ 
+        transform: rotate(0);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+/* annimation de l'affichage de la reponse si erreur */
+@keyframes display {
+    0%{ 
+        opacity: 0;
+        transform: scale(.2);
+    }
+    100%{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+/* annimation de l'affichage en opacité */
+@keyframes display {
+
+    0%{ 
+        opacity: 0; 
+    }
+    100%{
+        opacity: 1;
+    }
+}
